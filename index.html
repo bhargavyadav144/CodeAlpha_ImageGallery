@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VISTA — A modern, premium image gallery. Explore curated collections across Nature, Architecture, Travel, Technology, and People." />
+  <meta name="keywords" content="image gallery, photography, nature, architecture, travel, technology, people, VISTA" />
+  <meta name="author" content="VISTA Gallery" />
+  <meta property="og:title" content="VISTA — Modern Image Gallery" />
+  <meta property="og:description" content="Explore curated photography collections in a beautifully designed gallery experience." />
+  <meta property="og:type" content="website" />
+
+  <title>VISTA — Modern Image Gallery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" aria-label="VISTA — Home">
+        <span class="logo-icon" aria-hidden="true">◈</span>
+        <span class="logo-text">VISTA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#home"       class="nav-link active" aria-current="page">Home</a>
+        <a href="#gallery"    class="nav-link">Gallery</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#about"      class="nav-link">About</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="nav-actions">
+        <button class="btn-search-toggle" id="searchToggle" aria-label="Toggle search bar" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button class="btn-favorites-nav" id="favNavBtn" aria-label="View favorites">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="fav-count" id="navFavCount" aria-live="polite">0</span>
+        </button>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar-wrapper" id="searchBarWrapper" role="search" aria-hidden="true">
+      <div class="search-bar-inner">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search by title, category, or description..."
+          aria-label="Search images"
+          autocomplete="off"
+        />
+        <button class="search-clear" id="searchClear" aria-label="Clear search" hidden>x</button>
+      </div>
+      <p class="search-results-info" id="searchResultsInfo" aria-live="polite"></p>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="#home"       class="mobile-link" tabindex="-1">Home</a>
+      <a href="#gallery"    class="mobile-link" tabindex="-1">Gallery</a>
+      <a href="#categories" class="mobile-link" tabindex="-1">Categories</a>
+      <a href="#about"      class="mobile-link" tabindex="-1">About</a>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="home" aria-labelledby="heroHeading">
+    <!-- Animated background -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-gradient-orb orb-1"></div>
+      <div class="hero-gradient-orb orb-2"></div>
+      <div class="hero-gradient-orb orb-3"></div>
+      <div class="hero-grid-overlay"></div>
+    </div>
+
+    <!-- Floating image previews -->
+    <div class="hero-floating-images" aria-hidden="true">
+      <div class="float-card float-card-1">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80" alt="" loading="lazy" />
+      </div>
+      <div class="float-card float-card-2">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&q=80" alt="" loading="lazy" />
+      </div>
+      <div class="float-card float-card-3">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80" alt="" loading="lazy" />
+      </div>
+      <div class="float-card float-card-4">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Curated Collections Available
+      </div>
+      <h1 class="hero-heading" id="heroHeading">
+        Explore.<br/>
+        <span class="heading-gradient">Discover.</span><br/>
+        Inspire.
+      </h1>
+      <p class="hero-description">
+        VISTA is a curated gallery of stunning photography spanning nature,
+        architecture, travel, technology, and the human experience. Every
+        image tells a story worth discovering.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#gallery" class="btn btn-primary" aria-label="Explore the gallery">
+          <span>Explore Gallery</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats" aria-label="Gallery statistics">
+        <div class="stat-item">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">Curated Images</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">infinity</span>
+          <span class="stat-label">Inspiration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY SECTION ===================== -->
+  <main class="gallery-section" id="gallery" aria-labelledby="galleryHeading">
+
+    <!-- Section Header -->
+    <div class="section-header" id="categories">
+      <div class="section-tag">Our Collection</div>
+      <h2 class="section-heading" id="galleryHeading">Explore the Gallery</h2>
+      <p class="section-subheading">
+        Browse through our curated collection of world-class photography,
+        filtered by your favorite categories.
+      </p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-container" role="group" aria-label="Filter images by category">
+      <button class="filter-btn active" data-filter="all"          aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="nature"       aria-pressed="false">Nature</button>
+      <button class="filter-btn" data-filter="architecture" aria-pressed="false">Architecture</button>
+      <button class="filter-btn" data-filter="travel"       aria-pressed="false">Travel</button>
+      <button class="filter-btn" data-filter="technology"   aria-pressed="false">Technology</button>
+      <button class="filter-btn" data-filter="people"       aria-pressed="false">People</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid" role="list" aria-label="Image gallery"></div>
+
+    <!-- No Results Message -->
+    <div class="no-results" id="noResults" aria-live="polite" hidden>
+      <div class="no-results-icon" aria-hidden="true">Search</div>
+      <h3>No images found</h3>
+      <p>Try a different search term or category filter.</p>
+      <button class="btn btn-primary" id="resetFilters">Reset Filters</button>
+    </div>
+
+  </main>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about-section" id="about" aria-labelledby="aboutHeading">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-tag">About VISTA</div>
+        <h2 class="section-heading" id="aboutHeading">A Gallery Built for Visual Storytellers</h2>
+        <p class="about-description">
+          VISTA was created to bridge the gap between raw photography and meaningful visual experiences.
+          Each image in our gallery is carefully curated to inspire creativity, spark wonder,
+          and celebrate the beauty of our world through a lens.
+        </p>
+        <p class="about-description">
+          Whether you are seeking inspiration for your next project, exploring the world
+          from your desk, or simply appreciating fine photography, VISTA offers a
+          seamless, distraction-free gallery experience.
+        </p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">curated</div>
+            <div>
+              <h3 class="feature-title">Curated Quality</h3>
+              <p>Every image hand-selected for composition, color, and story.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">organized</div>
+            <div>
+              <h3 class="feature-title">Smart Organization</h3>
+              <p>Filter by category and search by keyword instantly.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">favorites</div>
+            <div>
+              <h3 class="feature-title">Personal Favorites</h3>
+              <p>Save your favorite images and revisit them anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual" aria-hidden="true">
+        <div class="about-image-grid">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Mountain landscape" class="about-img about-img-1" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=80" alt="City architecture" class="about-img about-img-2" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Technology circuit" class="about-img about-img-3" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo" aria-label="VISTA — Back to top">
+            <span class="logo-icon" aria-hidden="true">V</span>
+            <span class="logo-text">VISTA</span>
+          </a>
+          <p class="footer-tagline">
+            A curated gallery of world-class photography. Explore. Discover. Inspire.
+          </p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow VISTA on Instagram" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Follow VISTA on Twitter" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="View VISTA on GitHub" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-group">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="#home"       class="footer-link">Home</a></li>
+            <li><a href="#gallery"    class="footer-link">Gallery</a></li>
+            <li><a href="#categories" class="footer-link">Categories</a></li>
+            <li><a href="#about"      class="footer-link">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div class="footer-links-group">
+          <h3 class="footer-heading">Categories</h3>
+          <ul class="footer-links" role="list">
+            <li><button class="footer-link footer-filter-link" data-filter="nature">Nature</button></li>
+            <li><button class="footer-link footer-filter-link" data-filter="architecture">Architecture</button></li>
+            <li><button class="footer-link footer-filter-link" data-filter="travel">Travel</button></li>
+            <li><button class="footer-link footer-filter-link" data-filter="technology">Technology</button></li>
+            <li><button class="footer-link footer-filter-link" data-filter="people">People</button></li>
+          </ul>
+        </div>
+
+        <!-- Stay Inspired -->
+        <div class="footer-links-group">
+          <h3 class="footer-heading">Stay Inspired</h3>
+          <p class="footer-desc">Discover new images added to the collection every week across all categories.</p>
+          <div class="footer-badge-group">
+            <span class="footer-badge">Nature</span>
+            <span class="footer-badge">Architecture</span>
+            <span class="footer-badge">Travel</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="footerYear"></span> VISTA Modern Image Gallery. All rights reserved.
+        </p>
+        <p class="footer-made">Crafted with care for the modern web</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX MODAL ===================== -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image viewer"
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    <div class="lightbox-backdrop" id="lightboxBackdrop" aria-hidden="true"></div>
+    <div class="lightbox-container">
+
+      <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close image viewer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-wrapper">
+        <img class="lightbox-image" id="lightboxImage" src="" alt="" />
+        <div class="lightbox-loader" id="lightboxLoader" aria-hidden="true">
+          <div class="loader-spinner"></div>
+        </div>
+      </div>
+
+      <div class="lightbox-info" id="lightboxInfo">
+        <div class="lightbox-meta">
+          <span class="lightbox-category" id="lightboxCategory"></span>
+          <button class="lightbox-fav-btn" id="lightboxFavBtn" aria-label="Favorite this image" aria-pressed="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <h2 class="lightbox-title" id="lightboxTitle"></h2>
+        <p class="lightbox-description" id="lightboxDesc"></p>
+        <div class="lightbox-counter" aria-live="polite">
+          <span id="lightboxCurrent">1</span> of <span id="lightboxTotal">1</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
